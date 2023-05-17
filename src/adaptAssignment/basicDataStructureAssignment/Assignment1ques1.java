@@ -2,15 +2,8 @@ package adaptAssignment.basicDataStructureAssignment;
 
 import java.util.Scanner;
 
-public class Assignment1question1 {
+public class Assignment1ques1 {
     static class Armstrong {
-        int power(int x, long y) {
-            if (y == 0)
-                return 1;
-            if (y % 2 == 0)
-                return power(x, y / 2) * power(x, y / 2);
-            return x * power(x, y / 2) * power(x, y / 2);
-        }
 
         int order(int x) {
             int n = 0;
@@ -27,7 +20,7 @@ public class Assignment1question1 {
             int temp = x, sum = 0;
             while (temp != 0) {
                 int r = temp % 10;
-                sum = sum + power(r, n);
+                sum = (int) (sum + Math.pow(r, n));
                 temp = temp / 10;
             }
             return (sum == x);
