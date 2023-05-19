@@ -7,26 +7,17 @@ enum Gender {
     Female
 }
 
-class Contact implements Comparable<Contact> {
+class Contact  {
     long phoneNumber;
     String name, email;
     Gender gender;
 
+    //constructor
     public Contact(long phoneNumber, String name, String email, Gender gender) {
         this.phoneNumber = phoneNumber;
         this.name = name;
         this.email = email;
         this.gender = gender;
-    }
-
-    @Override
-    public int compareTo(Contact o) {
-        if (o.phoneNumber > phoneNumber) {
-            return -1;
-        } else if (o.phoneNumber < phoneNumber) {
-            return 1;
-        }
-        return 0;
     }
 
     @Override
@@ -45,11 +36,11 @@ public class ques1 {
 
         TreeMap<Long, Contact> map = new TreeMap<>();
 
-        map.put((long) 102, new Contact(1234567892, "Rajat", "rajat@gmail.com", Gender.Male));
-        map.put((long) 101, new Contact(1234567891, "John Doe", "john@gmail.com", Gender.Male));
-        map.put((long) 103, new Contact(1234567893, "Jane Doe", "jane@gmail.com", Gender.Female));
-        map.put((long) 104, new Contact(1234567894, "Emma", "emma@gmail.com", Gender.Female));
-        map.put((long) 105, new Contact(1234567895, "Ram", "ram@gmail.com", Gender.Male));
+        map.put((long) 994567892, new Contact(994567892, "Tushar", "tushar@gmail.com", Gender.Male));
+        map.put((long) 994567891, new Contact(994567891, "John Doe", "john@gmail.com", Gender.Male));
+        map.put((long) 994567893, new Contact(994567893, "Jane Doe", "jane@gmail.com", Gender.Female));
+        map.put((long) 994567894, new Contact(994567894, "Emma", "emma@gmail.com", Gender.Female));
+        map.put((long) 994567895, new Contact(994567895, "Ram", "ram@gmail.com", Gender.Male));
 
         // Fetch all the keys and print them
         for (long key : map.keySet()) {
