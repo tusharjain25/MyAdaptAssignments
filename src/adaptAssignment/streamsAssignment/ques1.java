@@ -1,8 +1,8 @@
 package adaptAssignment.streamsAssignment;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 class Fruit {
@@ -67,17 +67,19 @@ public class ques1 {
                 .sorted((f1, f2) -> f2.getCalorie() - f1.getCalorie())
                 .map(Fruit::getName).collect(Collectors.toList());
     }
-    public static ArrayList<Fruit> sort(ArrayList<Fruit> Fruits) {
-        return null;
-        /*
-        code
-         */
+    public static ArrayList<Fruit> sort(ArrayList<Fruit> fruits) {
+        return fruits.stream().sorted(new Comparator<>() {
+            @Override
+            public int compare(Fruit f1, Fruit f2) {
+                return f1.getColor().compareTo(f2.getColor());
+            }
+        }).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public static ArrayList<Fruit> filterRedSortPrice(ArrayList<Fruit> fruits){
 
         return fruits.stream()
-                .filter(fruit -> fruit.getColor().toLowerCase().equals("red"))
+                .filter(fruit -> fruit.getColor().equalsIgnoreCase("red"))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 

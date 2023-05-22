@@ -1,4 +1,4 @@
-package adaptAssignment.StringAssignment;
+package adaptAssignment.stringAssignment;
 
 public class question3 {
     public static void main(String[] args) {
