@@ -87,8 +87,8 @@ public class ques1 {
         ArrayList<Fruit> fruitsList = new ArrayList<>();
         fruitsList.add(new Fruit("Mango", "Yellow", 200, 100));
         fruitsList.add(new Fruit("Apples", "Red", 100, 80));
-        fruitsList.add(new Fruit("Grapes", "Green", 40, 80));
-        fruitsList.add(new Fruit("Pomegranate", "Red", 80, 80));
+        fruitsList.add(new Fruit("Grapes", "Green", 40, 70));
+        fruitsList.add(new Fruit("Pomegranate", "Red", 80, 90));
 
         System.out.println("Fruits with calories < 100");
         List<String> lessCaloriesFruits = reverseSort(fruitsList);
