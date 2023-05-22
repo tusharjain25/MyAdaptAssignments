@@ -1,4 +1,5 @@
 package adaptAssignment.collectionAssignment;
+
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -7,9 +8,10 @@ enum Gender {
     Female
 }
 
-class Contact  {
-    long phoneNumber;
-    String name, email;
+class Contact {
+    Long phoneNumber;
+    String name;
+    String email;
     Gender gender;
 
     //constructor
@@ -22,25 +24,25 @@ class Contact  {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Name : ").append(name);
-        sb.append(",  PhoneNumber : ").append(phoneNumber);
-        sb.append(",  Email : ").append(email);
-        sb.append(",  Gender : ").append(gender);
 
-        return sb.toString();
+        return "Name : " + name +
+                ",  PhoneNumber : " + phoneNumber +
+                ",  Email : " + email +
+                ",  Gender : " + gender;
     }
+
 }
 public class ques1 {
     public static void main(String[] args) {
 
-        TreeMap<Long, Contact> map = new TreeMap<>();
+        TreeMap<Long, Contact> map = new TreeMap<>((o1, o2) -> Long.compare(o2, o1));
 
-        map.put((long) 994567892, new Contact(994567892, "Tushar", "tushar@gmail.com", Gender.Male));
-        map.put((long) 994567891, new Contact(994567891, "John Doe", "john@gmail.com", Gender.Male));
-        map.put((long) 994567893, new Contact(994567893, "Jane Doe", "jane@gmail.com", Gender.Female));
-        map.put((long) 994567894, new Contact(994567894, "Emma", "emma@gmail.com", Gender.Female));
-        map.put((long) 994567895, new Contact(994567895, "Ram", "ram@gmail.com", Gender.Male));
+        map.put((long) 994567892, new Contact(994567892, "TushAr", "tushar@gmail.com", Gender.Male));
+        map.put((long) 994567893, new Contact(994567893, "aa", "aa@gmail.com", Gender.Male));
+        map.put((long) 994567891, new Contact(994567891, "bb", "bb@gmail.com", Gender.Female));
+        map.put((long) 994567895, new Contact(994567895, "cc", "cc@gmail.com", Gender.Female));
+        map.put((long) 994567894, new Contact(994567894, "dd", "dd@gmail.com", Gender.Male));
+
 
         // Fetch all the keys and print them
         for (long key : map.keySet()) {
